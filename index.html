@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+        <div class="floating-circle circle-4"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>⚡ MORSE CODE PRO</h1>
+            <p>Auto-detects Text ↔ Morse in a single box</p>
+        </div>
+
+        <!-- Mode Badge -->
+        <div class="mode-badge-container">
+            <span id="modeBadge" class="mode-badge">READY</span>
+        </div>
+
+        <div class="content">
+            <!-- Single Input Box -->
+            <div class="input-group">
+                <textarea 
+                    id="mainInput" 
+                    placeholder="Type text in any language OR paste Morse code here..."
+                ></textarea>
+                <div class="input-actions">
+                    <button class="action-btn clear-btn" onclick="clearAll()">
+                        🗑️ CLEAR
+                    </button>
+                    <button class="action-btn copy-btn" id="copyBtn" onclick="copyOutput()">
+                        📋 COPY
+                    </button>
+                </div>
+            </div>
+
+            <!-- Language Tabs (shown only when decoding) -->
+            <div id="langTabs" class="lang-tabs">
+                <button onclick="setDecodeLang('english')" class="lang-btn active" data-lang="english">🇺🇸 English</button>
+                <button onclick="setDecodeLang('bengali')" class="lang-btn" data-lang="bengali">🇧🇩 বাংলা</button>
+                <button onclick="setDecodeLang('hindi')" class="lang-btn" data-lang="hindi">🇮🇳 हिन्दी</button>
+                <button onclick="setDecodeLang('arabic')" class="lang-btn" data-lang="arabic">🇸🇦 العربية</button>
+                <button onclick="setDecodeLang('russian')" class="lang-btn" data-lang="russian">🇷🇺 Русский</button>
+                <button onclick="setDecodeLang('japanese')" class="lang-btn" data-lang="japanese">🇯🇵 日本語</button>
+                <button onclick="setDecodeLang('korean')" class="lang-btn" data-lang="korean">🇰🇷 한국어</button>
+                <button onclick="setDecodeLang('thai')" class="lang-btn" data-lang="thai">🇹🇭 ไทย</button>
+                <button onclick="setDecodeLang('greek')" class="lang-btn" data-lang="greek">🇬🇷 Ελληνικά</button>
+                <button onclick="setDecodeLang('chinese')" class="lang-btn" data-lang="chinese">🇨🇳 中文</button>
+            </div>
+
+            <!-- Output Box -->
+            <div class="output-group">
+                <label class="output-label">OUTPUT</label>
+                <div id="outputBox" class="output-box">
+                    Your result will appear here...
+                </div>
+            </div>
+
+            <!-- Audio Controls -->
+            <div class="audio-controls">
+                <button onclick="toggleMorseAudio()" id="playBtn" class="play-btn">
+                    🔊 PLAY MORSE AUDIO
+                </button>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div id="morseCount" class="stat-value">0</div>
+                    <div class="stat-label">MORSE SYMBOLS</div>
+                </div>
+            </div>
+
+            <div class="credit">
+                DEVELOPED BY SOBUJ RAHMAN
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
